@@ -1,13 +1,11 @@
 import 'package:dribbble_financial/core/extensions/context_extensions.dart';
+import 'package:dribbble_financial/core/extensions/num_extension.dart';
 import 'package:dribbble_financial/resume/models/financial_item.dart';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-
 final financialList = FinancialItem.generateList();
-
-  
 
 class DashboardFinancialOptions extends StatelessWidget {
   const DashboardFinancialOptions({
@@ -56,8 +54,9 @@ class FinancialItemCard extends StatelessWidget {
       elevation: 2.0,
       shadowColor: Colors.transparent,
       child: Padding(
-        padding: const EdgeInsets.only(left: 10.0),
+        padding: const EdgeInsets.only(left: 20.0),
         child: FittedBox(
+          alignment: Alignment.centerLeft,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -69,7 +68,7 @@ class FinancialItemCard extends StatelessWidget {
                   width: 50,
                   height: 50,
                   child: Card(
-                     surfaceTintColor: const Color.fromARGB(255, 218, 208, 235),
+                    surfaceTintColor: const Color.fromARGB(255, 218, 208, 235),
                     color: selectedColor.withAlpha(80),
                     elevation: 1.0,
                     shadowColor: Colors.transparent,
@@ -80,7 +79,10 @@ class FinancialItemCard extends StatelessWidget {
                 ),
               ),
               const Gap(10),
-              Text(financialItem.title, style: context.theme.bodyLarge,),
+              Text(
+                financialItem.title,
+                style: context.theme.bodyLarge,
+              ),
               const Gap(10),
               Text.rich(getTextSpanMoney(financialItem.money, context)),
               const Gap(10.0)
@@ -92,16 +94,18 @@ class FinancialItemCard extends StatelessWidget {
   }
 
   TextSpan getTextSpanMoney(num qty, BuildContext context) {
+    final fullPart = qty.toInt().toStringDotted();
+
     var decimal = qty.toStringAsFixed(2);
     final indexOfPoint = decimal.indexOf('.');
     decimal = decimal.substring(indexOfPoint);
     return TextSpan(children: [
       TextSpan(text: '\$', style: context.theme.titleMedium),
-      TextSpan(text: qty.toInt().toString(), style: context.theme.titleMedium),
+      TextSpan(text: fullPart, style: context.theme.titleMedium),
       TextSpan(
           text: decimal,
           style: context.theme.titleSmall
-              ?.copyWith(color: const Color.fromARGB(255, 185, 187, 185)))
+              ?.copyWith(color: Color.fromARGB(255, 80, 80, 80)))
     ]);
   }
 }

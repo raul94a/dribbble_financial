@@ -28,11 +28,17 @@ class _DashboardState extends State<Dashboard> {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: const SystemUiOverlayStyle(
           statusBarColor: Colors.transparent,
+          systemNavigationBarColor: Colors.black,
+          systemNavigationBarIconBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark),
       child: Scaffold(
-        bottomNavigationBar: BottomNavigationBar(
-            selectedIndex: selectedIndex,
-            onTapNavigationBar: onTapNavigationBar),
+        bottomNavigationBar: SizedBox(
+          height: 50,
+          child: BottomNavigationBar(
+              
+              selectedIndex: selectedIndex,
+              onTapNavigationBar: onTapNavigationBar),
+        ),
         body: body[selectedIndex]
       ),
     );

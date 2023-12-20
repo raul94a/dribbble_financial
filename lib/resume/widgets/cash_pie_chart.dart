@@ -118,7 +118,7 @@ class _Chart extends StatelessWidget {
           const Positioned(top: 0, right: 0, child: Text('45%')),
           Positioned(
               top: 35,
-              right: 25,
+              right: 17,
               child: Container(
                 transform: Matrix4.rotationZ(-pi / 4),
                 width: 22,
@@ -135,8 +135,8 @@ class _Chart extends StatelessWidget {
                 color: Colors.black,
               )),
           Positioned(
-              bottom: 20,
-              left: 20,
+              bottom: 19,
+              left: 15,
               child: Container(
                 transform: Matrix4.rotationZ(-pi / 4),
                 width: 22,

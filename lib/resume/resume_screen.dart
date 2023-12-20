@@ -1,4 +1,4 @@
-
+import 'package:dribbble_financial/resume/widgets/analytics.dart';
 import 'package:dribbble_financial/resume/widgets/appbar.dart';
 import 'package:dribbble_financial/resume/widgets/cash_pie_chart.dart';
 import 'package:dribbble_financial/resume/widgets/financial_options_grid.dart';
@@ -16,7 +16,7 @@ class ResumeScreen extends StatelessWidget {
         children: [
           Appbar(),
           DashboardFinancialOptions(),
-          CashPieChart(),
+          Analytics(chart: CashPieChart())
         ],
       ),
     );

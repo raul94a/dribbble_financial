@@ -15,7 +15,7 @@ class DashboardFinancialOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         shrinkWrap: true,
         primary: false,
         itemCount: 4,
@@ -105,7 +105,7 @@ class FinancialItemCard extends StatelessWidget {
       TextSpan(
           text: decimal,
           style: context.theme.titleSmall
-              ?.copyWith(color: Color.fromARGB(255, 80, 80, 80)))
+              ?.copyWith(color: const Color.fromARGB(255, 80, 80, 80)))
     ]);
   }
 }

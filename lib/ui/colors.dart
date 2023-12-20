@@ -11,4 +11,4 @@ final greenChart = Colors.green.shade200;
 final violetChart = Colors.deepPurple.shade200;
 
 
-final blue = Colors.blueGrey;
+const blue = Colors.blueGrey;

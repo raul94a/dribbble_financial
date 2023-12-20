@@ -34,6 +34,5 @@ void main() {
   test('Test for parsing numbers with dots', () {
     var qty = 10;
     final parsedQty = parseQty(qty);
-    print(parsedQty);
   });
 }

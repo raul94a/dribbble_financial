@@ -16,7 +16,7 @@ class ResumeScreen extends StatelessWidget {
         children: [
           Appbar(),
           DashboardFinancialOptions(),
-          Analytics(chart: CashPieChart())
+          AnalyticsCard(chart: CashPieChart())
         ],
       ),
     );

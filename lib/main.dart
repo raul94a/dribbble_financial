@@ -1,4 +1,5 @@
 import 'package:dribbble_financial/dashboard/dashboard.dart';
+import 'package:dribbble_financial/utils/material_state_property_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -23,6 +24,9 @@ class MainApp extends StatelessWidget {
 final theme = ThemeData.light(
   useMaterial3: true,
 ).copyWith(
+    iconButtonTheme: IconButtonThemeData(style: ButtonStyle(
+      iconColor: getProperty(Colors.black)
+    )),
     navigationBarTheme: const NavigationBarThemeData(
       backgroundColor: Color.fromARGB(255, 26, 26, 26),
       elevation: 0.0,

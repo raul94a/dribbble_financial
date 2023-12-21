@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:dribbble_financial/resume/resume_screen.dart';
+import 'package:dribbble_financial/widgets/user_circular_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -23,6 +24,7 @@ class _DashboardState extends State<Dashboard> {
     final sizedBox = SizedBox();
     body.addAll([sizedBox, sizedBox, ResumeScreen(), sizedBox]);
   }
+
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -32,19 +34,16 @@ class _DashboardState extends State<Dashboard> {
           systemNavigationBarIconBrightness: Brightness.light,
           statusBarIconBrightness: Brightness.dark),
       child: Scaffold(
-        bottomNavigationBar: SizedBox(
-          height: 50,
-          child: BottomNavigationBar(
-              
-              selectedIndex: selectedIndex,
-              onTapNavigationBar: onTapNavigationBar),
-        ),
-        body: body[selectedIndex]
-      ),
+          bottomNavigationBar: SizedBox(
+            height: 50,
+            child: BottomNavigationBar(
+                selectedIndex: selectedIndex,
+                onTapNavigationBar: onTapNavigationBar),
+          ),
+          body: body[selectedIndex]),
     );
   }
 }
-
 
 class BottomNavigationBar extends StatelessWidget {
   const BottomNavigationBar(
@@ -59,7 +58,7 @@ class BottomNavigationBar extends StatelessWidget {
       onDestinationSelected: onTapNavigationBar,
       selectedIndex: selectedIndex,
       labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
-      destinations: [
+      destinations: const [
         NavigationDestination(icon: Icon(Icons.home_outlined), label: ''),
         NavigationDestination(icon: Icon(Icons.cases_outlined), label: ''),
         NavigationDestination(
@@ -67,18 +66,16 @@ class BottomNavigationBar extends StatelessWidget {
         NavigationDestination(icon: Icon(Icons.settings_outlined), label: ''),
         NavigationDestination(
             enabled: false,
-            icon: ClipOval(
-              child: CircleAvatar(
-                child: Image.network(
-                    'https://randomuser.me/api/portraits/women/54.jpg'),
-              ),
-            ),
+            icon: UserCircularAvatar(
+                url: 'https://randomuser.me/api/portraits/women/54.jpg'),
             label: ''),
       ],
       backgroundColor: Colors.black,
     );
   }
 }
+
+
 // BottomNavigationBar(
 //           elevation: 10,
 //           backgroundColor:Theme.of(context).bottomNavigationBarTheme.backgroundColor ,

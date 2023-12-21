@@ -42,23 +42,23 @@ final theme = ThemeData.light(
         backgroundColor: Color.fromARGB(255, 26, 26, 26)),
     textTheme: const TextTheme(
       bodySmall:
-          TextStyle(fontFamily: 'Euclid Circular A', color: Colors.black, fontSize: 12),
+          TextStyle(fontFamily: 'Euclid A', color: Colors.black, fontSize: 12),
       bodyMedium:
-          TextStyle(fontFamily: 'Euclid Circular A', color: Colors.black, fontSize: 14),
+          TextStyle(fontFamily: 'Euclid A', color: Colors.black, fontSize: 14),
       bodyLarge:
-          TextStyle(fontFamily: 'Euclid Circular A', color: Colors.black, fontSize: 16),
+          TextStyle(fontFamily: 'Euclid A', color: Colors.black, fontSize: 16),
       titleLarge: TextStyle(
-          fontFamily: 'Euclid Circular A',
+          fontFamily: 'Euclid A',
           color: Colors.black,
           fontSize: 24,
           fontWeight: FontWeight.bold),
       titleMedium: TextStyle(
-          fontFamily: 'Euclid Circular A',
+          fontFamily: 'Euclid A',
           color: Colors.black,
           fontSize: 20,
           fontWeight: FontWeight.bold),
       titleSmall: TextStyle(
-          fontFamily: 'Euclid Circular A',
+          fontFamily: 'Euclid A',
           color: Colors.black,
           fontSize: 16,
           fontWeight: FontWeight.bold),

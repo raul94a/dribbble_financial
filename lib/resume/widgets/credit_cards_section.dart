@@ -13,7 +13,7 @@ class CreditCardSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: const Color.fromARGB(255, 241, 238, 238),
+      color: const Color.fromARGB(255, 248, 248, 248),
       child: const Padding(
         padding: EdgeInsets.symmetric(horizontal: 15.0),
         child: Column(
@@ -67,7 +67,7 @@ class _AddCardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-     constraints: const BoxConstraints(maxWidth: 500),
+      constraints: const BoxConstraints(maxWidth: 500),
       height: 45,
       child: ElevatedButton(
           style: ButtonStyle(
@@ -264,8 +264,7 @@ class _QuickMoneyTransfer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-           constraints: const BoxConstraints(maxWidth: 500),
-
+      constraints: const BoxConstraints(maxWidth: 500),
       child: Column(
         children: [
           const QuickTransferHeader(),
@@ -274,7 +273,8 @@ class _QuickMoneyTransfer extends StatelessWidget {
               child: QuickTransferUserList(),
             ),
             IconButton(
-                onPressed: () {}, icon: const Icon(Icons.arrow_forward_ios_outlined))
+                onPressed: () {},
+                icon: const Icon(Icons.arrow_forward_ios_outlined))
           ]),
           const Gap(15.0)
         ],

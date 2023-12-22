@@ -3,10 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class Appbar extends StatelessWidget {
-  const Appbar({
-    super.key,
-  });
-
+  const Appbar({super.key, required this.title, required this.children});
+  final String title;
+  final List<Widget> children;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -17,17 +16,12 @@ class Appbar extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-            
               Text(
-                'Dashboard',
+                title,
                 style: context.theme.titleLarge,
               ),
-              const Row(
-                children: [
-                  Icon(Icons.notifications_none_rounded),
-                  Gap(40.0),
-                  Icon(Icons.toc_outlined)
-                ],
+              Row(
+                children: children,
               )
             ],
           ),

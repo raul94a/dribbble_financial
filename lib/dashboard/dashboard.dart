@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:dribbble_financial/resume/resume_screen.dart';
+import 'package:dribbble_financial/total_activity/total_activity.dart';
 import 'package:dribbble_financial/widgets/user_circular_avatar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,7 +23,7 @@ class _DashboardState extends State<Dashboard> {
   void initState() {
     super.initState();
     final sizedBox = SizedBox();
-    body.addAll([sizedBox, sizedBox, ResumeScreen(), sizedBox]);
+    body.addAll([sizedBox, TotalActivityScreen(), ResumeScreen(), sizedBox]);
   }
 
   @override
